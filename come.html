@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>השקעות נדל"ן ועסקים - הזדמנויות חמות</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    direction: rtl;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(20px); }
+}
+
+header h1 {
+    font-size: 48px;
+    margin: 20px 0;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: -1px;
+}
+
+header p {
+    font-size: 20px;
+    opacity: 0.95;
+    margin-top: 10px;
+}
+
+/* NAV */
+nav {
+    background: rgba(255, 250, 240, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+
+nav a {
+    margin: 0 20px;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* SECTIONS */
+.section {
+    padding: 80px 20px;
+    position: relative;
+}
+
+.section h2 {
+    font-size: 42px;
+    margin-bottom: 50px;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* CARDS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
+}
+
+.card-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 25px;
+    position: relative;
+}
+
+.card-content h3 {
+    color: #667eea;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.price {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 26px;
+    font-weight: 900;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.cta {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cta a {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    display: inline-block;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: left 0.3s ease;
+}
+
+.cta a:hover::before {
+    left: 100%;
+}
+
+.cta a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.watermark {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+/* BACKGROUNDS */
+.bg1 {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.bg2 {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+.bg3 {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.bg4 {
+    background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);
+}
+
+/* CLOSING */
+.closing {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.8;
+    margin-top: 40px;
+}
+
+.closing a {
+    color: #fff;
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+}
+
+.closing a:hover {
+    opacity: 0.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 32px;
+    }
+    
+    .section h2 {
+        font-size: 28px;
+    }
+    
+    nav a {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🏆 הזדמנויות נדל"ן והשקעות ברמה אחרת</h1>
+<p>✨ נכסים | עסקים | חברות למכירה</p>
+</header>
+
+<nav>
+<a href="#plots">📍 מגרשים</a>
+<a href="#buildings">🏢 בניינים</a>
+<a href="#prime">👑 פריים לוקיישן</a>
+<a href="#companies">💼 חברות ועסקים</a>
+</nav>
+
+<!-- מגרשים -->
+<div class="section bg1" id="plots">
+<div class="container">
+<h2>🌍 מגרשים למכירה</h2>
+<div class="grid">
+<div class="card">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" alt="מגרש תל אביב">
+</div>
+<div class="card-content">
+<h3>מגרש במונטיפיורי תל אביב</h3>
+<p>תב"ע ת"א 5000 | 3.5 ק"מ מעיר</p>
+<p>30% מגורים, 70% מסחר - פוטנציאל גדול! 📈</p>
+<div class="price">26,000,000 ₪</div>
+<div class="cta"><a href="tel:0500000000">📞 התקשר עכשיו</a></div>
+<div class="watermark">להמחשה בלבד</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- בניינים -->
+<div class="section bg2" id="buildings">
+<div class="container">
+<h2>🏗️ בניינים להשקעה</h2>
+<div class="grid">
+<div class="card">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" alt="בניין תקווה">
+</div>
+<div class="card-content">
+<h3>בניין חלומי בשכונת התקווה</h3>
+<p><strong>2 קומות | 8 יחידות | משופץ ברמה גבוהה</strong></p>
+<ul style="font-size: 14px; line-height: 1.8; margin-top: 10px; margin-right: 15px;">
+<li>✅ קומת קרקע: 105 מ"ר – 4 יחידות</li>
+<li>✅ קומה ראשונה: 101 מ"ר – 4 יחידות</li>
+<li>✅ כל הדירות משופצות ברמה הכי גבוהה</li>
+<li>✅ נכס מניב עם פוטנציאל השקעה חזק</li>
+</ul>
+<div class="price">💰 מחיר בפרטי</div>
+<div class="cta"><a href="tel:0500000000">📞 התקשר עכשיו</a></div>
+<div class="watermark">להמחשה בלבד</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- פריים -->
+<div class="section bg3" id="prime">
+<div class="container">
+<h2>👑 פריים לוקיישן</h2>
+<div class="grid">
+<div class="card">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb" alt="קינג ג'ורג'">
+</div>
+<div class="card-content">
+<h3>שטח 20 מ"ר - קינג ג'ורג'</h3>
+<p>לוקציה אסטרטגית | תנועה גבוהה | עסקי זהב 🌟</p>
+<p>מתאים לכל סוג עסק - קפה, משרד, קטעון</p>
+<div class="price">740,000 ₪</div>
+<div class="cta"><a href="tel:0500000000">📞 התקשר עכשיו</a></div>
+<div class="watermark">להמחשה בלבד</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- חברות -->
+<div class="section bg4" id="companies">
+<div class="container">
+<h2>💼 חברות ועסקים מוכנים</h2>
+<div class="grid">
+
+<div class="card">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957" alt="חברות הסעות">
+</div>
+<div class="card-content">
+<h3>🚌 חברות הסעות</h3>
+<p><strong>מחזורים:</strong> 3–7 מיליון ₪</p>
+<p><strong>או:</strong> 20–40 מיליון ₪ (חברות גדולות)</p>
+<p>עסק מבוסס עם לקוחות קבועים ✅</p>
+<div class="cta"><a href="tel:0500000000">📞 שאל על פרטים</a></div>
+<div class="watermark">להמחשה בלבד</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1581091215367-59ab6b6b63d3" alt="פלסטיקה">
+</div>
+<div class="card-content">
+<h3>🏭 חברת פלסטיקה</h3>
+<p><strong>לרציניים בלבד</strong></p>
+<p>ייצור וייכוח | הכנסות יציבות</p>
+<p>מחזור גבוה | מיקום אסטרטגי</p>
+<div class="cta"><a href="tel:0500000000">📞 בקש פרטים</a></div>
+<div class="watermark">להמחשה בלבד</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a" alt="מכולת">
+</div>
+<div class="card-content">
+<h3>🛒 מכולת פ"ת</h3>
+<p><strong>מחזור חודשי:</strong> 180,000 ₪</p>
+<p><strong>שטח:</strong> 100 מ"ר | פריים לוקיישן 🔥</p>
+<p>עסק שוגר ללא בעיות | הכנסה קבועה</p>
+<div class="cta"><a href="tel:0500000000">📞 התקשר עכשיו</a></div>
+<div class="watermark">להמחשה בלבד</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1519167758481-83f29c8d1a8f" alt="אירועים">
+</div>
+<div class="card-content">
+<h3>🎉 עסק אירועים</h3>
+<p><strong>מחזור חודשי:</strong> 800,000 ₪</p>
+<p><strong>כולל:</strong> רכב, ציוד, מפעילות מקצועיות</p>
+<p>עסק מפתח מוכן להרחבה 📊</p>
+<div class="cta"><a href="tel:0500000000">📞 התקשר עכשיו</a></div>
+<div class="watermark">להמחשה בלבד</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- סיום -->
+<div class="closing">
+🎯 מחפש נכס? רוצה להשקיע? או למכור עסק?<br><br>
+אנחנו מביאים לך את העסקאות הכי חמות בשוק ודואגים לסגירה הטובה ביותר עבורך.<br><br>
+📞 <strong>צור קשר עכשיו ותתקדם לעסקה הבאה שלך!</strong>
+</div>
+
+</body>
+</html>
